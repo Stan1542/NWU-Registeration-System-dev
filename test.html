@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="username">Username</label>
+    <input type="text" id="username">
+
+    <label for="password">Password</label>
+    <input type="password" id="password">
+
+    <button id="clearbtn">Clear</button>
+    <button id="LoginBtn">Login</button>
+
+    <p><a href="#" id="forgottenP">Forgot Password </a></p>
+
+    <script>
+        document.getElementById("clearbtn").addEventListener("click", function(){
+            var username = document.getElementById("username").value = " ";
+            var password = document.getElementById("password").value = " ";
+        });
+
+        document.getElementById("LoginBtn").addEventListener("click", function(){
+            var username = document.getElementById("username").value;
+            var passowrd = document.getElementById("password").value;
+
+            if(username === " " || password === " "){
+
+                alert("Please fill out all the fields do not leave them empty!!!");
+            }
+            else{
+                if(/^[a-zA-Z]+$/.test(username) && /[0-9]/.test(password)){
+                    window.location.href = "Prompt.html";
+                }
+                else{
+                    alert("Invalid username!!!");
+                }
+            }
+        });
+
+        document.getElementById("forgottenP").addEventListener("click", function(){
+            alert("Please contact the administration for assistance")
+        })
+    </script>
+</body>
+</html>
